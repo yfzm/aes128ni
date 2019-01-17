@@ -13,6 +13,9 @@
 
 #include <wmmintrin.h>
 
+#define AES128_KEYLEN    16
+#define AES128_BLOCKLEN  16
+
 struct aes128 {
     __m128i k[20];
 };

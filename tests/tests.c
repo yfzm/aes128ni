@@ -23,8 +23,8 @@ main(void)
         0x3a, 0xd7, 0x7b, 0xb4, 0x0d, 0x7a, 0x36, 0x60,
         0xa8, 0x9e, 0xca, 0xf3, 0x24, 0x66, 0xef, 0x97
     };
-    unsigned char ct[16] = {0};
-    unsigned char xt[16] = {0};
+    unsigned char ct[AES128_BLOCKLEN] = {0};
+    unsigned char xt[AES128_BLOCKLEN] = {0};
 
     aes128_init(ctx, key);
     aes128_encrypt(ctx, ct, pt);

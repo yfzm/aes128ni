@@ -15,7 +15,7 @@ main(void)
     struct aes128 ctx[1];
     unsigned char buf[1 << 14];
     uint64_t counter[2] = {0, 0};
-    const unsigned char key[] = {0};
+    const unsigned char key[AES128_KEYLEN] = {0};
 
     aes128_init(ctx, key);
     for (;;) {
