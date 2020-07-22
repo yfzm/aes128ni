@@ -4,7 +4,10 @@ CFLAGS  = -std=c99 -Wall -Wextra -O3 -maes -march=native
 LDFLAGS =
 LDLIBS  =
 
-all: tests/tests tests/dump
+all: tests/tests tests/dump demo
+
+demo: demo.c aes128ni.h
+	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $< $(LDLIBS)
 
 tests/tests: tests/tests.c aes128ni.h
 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ tests/tests.c $(LDLIBS)
@@ -16,4 +19,4 @@ check: tests/tests
 	tests/tests
 
 clean:
-	rm -f tests/dump tests/tests
+	rm -f tests/dump tests/tests demo
